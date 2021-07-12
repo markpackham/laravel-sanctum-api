@@ -23,7 +23,13 @@ Route::get('/products', [ProductController::class, 'index']);
 // eg http://127.0.0.1:8000/api/products/2
 Route::get('/products/{id}', [ProductController::class, 'show']);
 
+// search for "name" like
+// http://127.0.0.1:8000/api/products/search/Prod
+Route::get('/products/search/{name}', [ProductController::class, 'search']);
+
 Route::post('/products', [ProductController::class, 'store']);
+
+Route::delete('/products/{id}', [ProductController::class, 'destory']);
 
 
 // Route::post('/products', function(){
